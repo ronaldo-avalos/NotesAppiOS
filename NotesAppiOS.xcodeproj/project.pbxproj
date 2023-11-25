@@ -16,6 +16,11 @@
 		CE4947932B116752002507DD /* NotesAppiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4947922B116752002507DD /* NotesAppiOSTests.swift */; };
 		CE49479D2B116752002507DD /* NotesAppiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49479C2B116752002507DD /* NotesAppiOSUITests.swift */; };
 		CE49479F2B116752002507DD /* NotesAppiOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49479E2B116752002507DD /* NotesAppiOSUITestsLaunchTests.swift */; };
+		CE4947AD2B1167FD002507DD /* NoteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4947AB2B1167FD002507DD /* NoteViewCell.swift */; };
+		CE4947AE2B1167FD002507DD /* NoteViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4947AC2B1167FD002507DD /* NoteViewCell.xib */; };
+		CE4947B12B116C6B002507DD /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4947B02B116C6B002507DD /* AddNoteViewController.swift */; };
+		CE4947B32B1174DA002507DD /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4947B22B1174DA002507DD /* NoteModel.swift */; };
+		CE4947B52B117503002507DD /* NotesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4947B42B117503002507DD /* NotesManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		CE4947982B116752002507DD /* NotesAppiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesAppiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE49479C2B116752002507DD /* NotesAppiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAppiOSUITests.swift; sourceTree = "<group>"; };
 		CE49479E2B116752002507DD /* NotesAppiOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAppiOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE4947AB2B1167FD002507DD /* NoteViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewCell.swift; sourceTree = "<group>"; };
+		CE4947AC2B1167FD002507DD /* NoteViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewCell.xib; sourceTree = "<group>"; };
+		CE4947B02B116C6B002507DD /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		CE4947B22B1174DA002507DD /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		CE4947B42B117503002507DD /* NotesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,7 @@
 		CE49477A2B116750002507DD /* NotesAppiOS */ = {
 			isa = PBXGroup;
 			children = (
+				CE4947AF2B11680A002507DD /* Cell */,
 				CE49477B2B116750002507DD /* AppDelegate.swift */,
 				CE49477D2B116750002507DD /* SceneDelegate.swift */,
 				CE49477F2B116750002507DD /* ViewController.swift */,
@@ -106,6 +117,9 @@
 				CE4947842B116751002507DD /* Assets.xcassets */,
 				CE4947862B116751002507DD /* LaunchScreen.storyboard */,
 				CE4947892B116751002507DD /* Info.plist */,
+				CE4947B02B116C6B002507DD /* AddNoteViewController.swift */,
+				CE4947B22B1174DA002507DD /* NoteModel.swift */,
+				CE4947B42B117503002507DD /* NotesManager.swift */,
 			);
 			path = NotesAppiOS;
 			sourceTree = "<group>";
@@ -125,6 +139,15 @@
 				CE49479E2B116752002507DD /* NotesAppiOSUITestsLaunchTests.swift */,
 			);
 			path = NotesAppiOSUITests;
+			sourceTree = "<group>";
+		};
+		CE4947AF2B11680A002507DD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE4947AB2B1167FD002507DD /* NoteViewCell.swift */,
+				CE4947AC2B1167FD002507DD /* NoteViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +256,7 @@
 			files = (
 				CE4947882B116751002507DD /* LaunchScreen.storyboard in Resources */,
 				CE4947852B116751002507DD /* Assets.xcassets in Resources */,
+				CE4947AE2B1167FD002507DD /* NoteViewCell.xib in Resources */,
 				CE4947832B116750002507DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,7 +283,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE4947802B116750002507DD /* ViewController.swift in Sources */,
+				CE4947B32B1174DA002507DD /* NoteModel.swift in Sources */,
 				CE49477C2B116750002507DD /* AppDelegate.swift in Sources */,
+				CE4947B52B117503002507DD /* NotesManager.swift in Sources */,
+				CE4947AD2B1167FD002507DD /* NoteViewCell.swift in Sources */,
+				CE4947B12B116C6B002507DD /* AddNoteViewController.swift in Sources */,
 				CE49477E2B116750002507DD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
