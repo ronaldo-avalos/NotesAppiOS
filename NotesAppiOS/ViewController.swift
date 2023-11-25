@@ -11,7 +11,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var notesTableView: UITableView!
     var notes: [Note] = [] // Array para almacenar las notas
-    
+    let notesM = NotesManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureItems()
@@ -21,17 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         notesTableView.delegate = self
         
-        // Recuperar las notas guardadas en UserDefaults
-        if let storedNotesData = UserDefaults.standard.data(forKey: "userNotes") {
-            do {
-                let storedNotes = try JSONDecoder().decode([Note].self, from: storedNotesData)
-                notes = storedNotes // Agregar las notas recuperadas al array 'notes'
-                notesTableView.reloadData() // Actualizar la tabla con las notas recuperadas
-            } catch {
-                print("Error al decodificar las notas: \(error)")
-            }
-        }
-        // Do any additional setup after loading the view.
+        notes = NotesManager.shared.getNotes()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,12 +48,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
         
-        @objc private func addButtonTapped() {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil) // Reemplaza "Main" con el nombre de tu storyboard
-              if let secondVC = storyboard.instantiateViewController(withIdentifier: "AddNoteViewController") as? AddNoteViewController {
-                  navigationController?.pushViewController(secondVC, animated: true)
-              }
+    @objc private func addButtonTapped() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let secondVC = storyboard.instantiateViewController(withIdentifier: "AddNoteViewController") as? AddNoteViewController {
+            navigationController?.pushViewController(secondVC, animated: true)
         }
+    }
 
     
         
