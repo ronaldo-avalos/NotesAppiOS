@@ -37,7 +37,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
 
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        notes = NotesManager.shared.getNotes() // Obtener las notas actualizadas
+        notesTableView.reloadData() // Recargar la tabla con las notas actualizadas
+    }
+    
+    
     private func configureItems(){
         navigationItem.rightBarButtonItem =
         UIBarButtonItem(barButtonSystemItem:

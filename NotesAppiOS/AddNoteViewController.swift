@@ -40,6 +40,10 @@ class AddNoteViewController: UIViewController {
         
         NotesManager.shared.save(note: newNote)
         navigationController?.popViewController(animated: true)
+        
+        if let previousViewController = navigationController?.viewControllers.first(where: { $0 is ViewController }) {
+             navigationController?.popToViewController(previousViewController, animated: true)
+         }
     }
 
     /*
