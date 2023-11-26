@@ -19,8 +19,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         configureItems()
         notesTableView.dataSource = self
     
-        notesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "mi-celda")
-        
+       // notesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "mi-celda")
+        notesTableView.register(UINib(nibName: "NoteViewCell", bundle: nil), forCellReuseIdentifier: "NoteViewCell" )
         notesTableView.delegate = self
         // Habilitar la edición de la tabla (deslizar para eliminar)
            notesTableView.allowsMultipleSelectionDuringEditing = true
@@ -33,8 +33,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = notesTableView.dequeueReusableCell(withIdentifier: "mi-celda", for: indexPath)
-        cell.textLabel?.text = notes[indexPath.row].title
+        let cell = notesTableView.dequeueReusableCell(withIdentifier: "NoteViewCell", for: indexPath)
+        
+        if let customCell = cell as? NoteViewCell {
+            customCell.setupCell(title:  notes[indexPath.row].title, content:  notes[indexPath.row].note)
+        }
         return cell
     }
     
