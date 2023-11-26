@@ -26,10 +26,13 @@ class NotesManager {
     
     func delete(atIndex index: Int) {
         var savedNotes = getNotes()
+        guard index >= 0 && index < savedNotes.count else {
+            return // Asegurarse de que el índice está dentro de los límites del array
+        }
         savedNotes.remove(at: index)
         saveNotes(savedNotes)
     }
-    
+
     func getNotes() -> [Note] {
         if let data = userDefaults.value(forKey: noteKey) as? Data,
            let savedNotes = try? JSONDecoder().decode([Note].self, from: data) {
